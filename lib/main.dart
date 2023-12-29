@@ -3,5 +3,7 @@ import 'package:flutter/material.dart';
 import 'datacon.dart';
 
 void main() {
-  runApp(const DataCon());
+  runApp(MaterialApp(
+    home: DataCon(),
+  ));
 }

@@ -37,30 +37,33 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2, // Número de guias
       child: Scaffold(
-        extendBody: true,
-        appBar: AppBar(
-          backgroundColor: Colors.black26,
-          title: Text(widget.title),
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'Critérios de Inclusão'),
-              Tab(text: 'Critérios de Exclusão'),
-            ],
-          ),
-        ),
-        // drawer: _buildDrawer(),
-        // drawer: MenuDataCon(),
-        body: TabBarView(
+        body: Column(
           children: [
-            CriteriosInclusao(),
-            CriteriosExclusao(),
+            Container(
+              // Aqui você pode personalizar a aparência da sua barra de guias
+              height: 50.0,
+              color: Colors.black26,
+              child: TabBar(
+                tabs: [
+                  Tab(text: 'Critérios de Inclusão'),
+                  Tab(text: 'Critérios de Exclusão'),
+                ],
+              ),
+            ),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  CriteriosInclusao(),
+                  CriteriosExclusao(),
+                ],
+              ),
+            ),
           ],
         ),
-        // bottomNavigationBar: _buildBody(),
-        // bottomNavigationBar: BottomNavigationScreen(),
       ),
     );
   }
+
 }

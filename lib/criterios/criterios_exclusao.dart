@@ -35,14 +35,21 @@ class _CriteriosExclusaoState extends State<CriteriosExclusao> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: _filterController,
-            decoration: const InputDecoration(
-              labelText: 'Filtrar',
-              prefixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(),
+          padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+          child: SizedBox(
+            width: 520.0,
+            child: TextField(
+              controller: _filterController,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.all(8.0),
+                labelText: 'Pesquisar',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+              ),
             ),
+
           ),
         ),
         Expanded(
